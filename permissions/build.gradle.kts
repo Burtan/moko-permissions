@@ -13,6 +13,21 @@ android {
     namespace = "dev.icerock.moko.permissions"
 }
 
+kotlin {
+    targets {
+        js(IR)
+    }
+
+    sourceSets {
+        val jsMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-browser:1.0.0-pre.536")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-web:1.0.0-pre.536")
+            }
+        }
+    }
+}
+
 dependencies {
     commonMainImplementation(libs.coroutines)
     androidMainImplementation(libs.appCompat)
